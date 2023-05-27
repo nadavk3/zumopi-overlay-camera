@@ -1,0 +1,1 @@
+/home/zumo/PycharmProjects/ros2_ws/zumo_interfaces/msg/Robotlocation.msg

@@ -1,0 +1,1 @@
+/home/zumo/PycharmProjects/ros2_ws/build/zumo_interfaces/rosidl_generator_cpp/zumo_interfaces/msg/detail/robotlocation__traits.hpp

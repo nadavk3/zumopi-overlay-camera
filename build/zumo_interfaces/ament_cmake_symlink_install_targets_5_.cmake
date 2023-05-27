@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/zumo/PycharmProjects/ros2_ws/build/zumo_interfaces/rosidl_generator_py/zumo_interfaces/libzumo_interfaces__python.so" "TARGETS" "zumo_interfaces__python" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

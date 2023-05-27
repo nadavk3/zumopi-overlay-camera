@@ -1,0 +1,7 @@
+{
+  "package_name": "zumo_interfaces",
+  "non_idl_tuples": [
+    "/home/zumo/PycharmProjects/ros2_ws/zumo_interfaces:msg/Rawdata.msg",
+    "/home/zumo/PycharmProjects/ros2_ws/zumo_interfaces:msg/Robotlocation.msg"
+  ]
+}
