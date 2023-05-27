@@ -40,8 +40,6 @@ class DebugCameraListener(Node):
 
 
     cv2.imshow("camera", current_frame)
-    # h, w, c = current_frame.shape
-    # cv2.imshow("camera", current_frame[int(h/4):int((3*h/4)), int(w/4):int((3*w/4))])
     cv2.waitKey(1)
 
   def location_listener_callback(self, data):
@@ -56,7 +54,7 @@ def main(args=None):
   rclpy.spin(debug_camera_listener)
   debug_camera_listener.destroy_node()
   
-  # Shutdown the ROS client library for Python
+  # Shutdown the ROS client
   rclpy.shutdown()
   
 if __name__ == '__main__':

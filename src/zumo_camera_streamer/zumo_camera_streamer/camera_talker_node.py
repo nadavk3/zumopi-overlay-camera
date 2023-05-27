@@ -24,19 +24,13 @@ class CameraTalker(Node):
         pass
 
     def timer_callback(self):
-        # Start Streaming, wait for five seconds, stop streaming
-        # ret, frame = self.cap.read()
-        # frame = cam.get_frame(timeout_ms=100)
-        # if ret == True:
-        # np_frame = np.stack(self.global_frame, axis=0)
+        # Share frame as global
         global global_frame
-        # self.get_logger().info(str(global_frame))
+
         if global_frame is not None:
             f_h, f_w, _ = global_frame.shape
-            # resized_frame = cv2.resize(global_frame, (int(3*f_w/4), int(3*f_h/4)), interpolation=cv2.INTER_AREA)
             roi_frame = global_frame[42:1060, 411:1935]
             cmpimg = self.br.cv2_to_compressed_imgmsg(roi_frame)
-            # img = self.br.cv2_to_imgmsg(frame)
             self.publisher_.publish(cmpimg)
             self.get_logger().info('video frame pubished')
 
@@ -89,8 +83,6 @@ def setup_camera(cam: Camera):
         except (AttributeError, VimbaFeatureError):
             pass
 
-        # Query available, open_cv compatible pixel formats
-        # prefer color formats over monochrome formats
         cv_fmts = intersect_pixel_formats(cam.get_pixel_formats(), OPENCV_PIXEL_FORMATS)
         color_fmts = intersect_pixel_formats(cv_fmts, COLOR_PIXEL_FORMATS)
 
@@ -132,7 +124,6 @@ def start_acquisition():
     with Vimba.get_instance():
         with get_camera(None) as cam:
 
-            # Start Streaming, wait for five seconds, stop streaming
             setup_camera(cam)
             handler = Handler()
 
