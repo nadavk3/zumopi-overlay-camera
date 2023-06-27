@@ -21,8 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
             "pub_node = zumo_camera_streamer.camera_talker_node:main",
-            "sub_node = zumo_camera_streamer.camera_listener_node:main",
+            "sub_node = zumo_camera_streamer.frame_analyzer_node:main",
             "loc_node = zumo_camera_streamer.location_finder_node:main",
+            "robot_node = zumo_camera_streamer.robot_node:main",
             "cam_debug_node = zumo_camera_streamer.debug_camera_listener_node:main"
         ],
     },

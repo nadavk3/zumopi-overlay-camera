@@ -26,6 +26,10 @@ class LocationFinder(Node):
 
     def decode_rawdata(self, data):
         cnt = self.decode_contour(data.cnt[0])
+        # red_list = [self.decode_contour(c) for c in data.red_list]
+        # blue_list = [self.decode_contour(c) for c in data.blue_list]
+        # yellow_list = [self.decode_contour(c) for c in data.yellow_list]
+
         return cnt, data.red_list, data.blue_list, data.green_list, data.yellow_list
 
     def decode_id(self, red_list, blue_list, green_list):
@@ -63,7 +67,7 @@ def main(args=None):
     rclpy.spin(location_finder)
     location_finder.destroy_node()
 
-    # Shutdown the ROS client
+    # Shutdown the ROS client library for Python
     rclpy.shutdown()
 
 
